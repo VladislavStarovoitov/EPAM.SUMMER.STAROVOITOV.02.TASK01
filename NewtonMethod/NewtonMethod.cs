@@ -6,18 +6,32 @@ using System.Threading.Tasks;
 
 namespace NewtonMethod
 {
+    /// <summary>
+    /// Contains method that finds nth root
+    /// </summary>
     public static class NewtonMethod
     {
-        public static double Root(double number, int pow, double eps)
+        /// <summary>
+        /// Finds nth root
+        /// </summary>
+        /// <param name="number">The number whose nth root is to be found</param>
+        /// <param name="pow">The number that specifies a power.</param>
+        /// <param name="eps">The number that specifies the accuracy of calculation of the root</param>
+        /// <returns>Nth root of the number</returns>
+        public static double Root(double number, int pow, double eps = 0.0000001)
         {
             bool isPowNegative = pow < 0;
+            if (eps <= 0 || eps >= 1)
+            {
+                throw new ArgumentException("eps");
+            }
             if (isPowNegative)
                 pow *= -1;
             if (pow == 0)
             {
                 return Double.NaN;
             }
-            if (number < 0)
+            if (number < 0 && (pow & 1) == 0)
             {
                 return Double.NaN;
             }
@@ -35,6 +49,12 @@ namespace NewtonMethod
             return isPowNegative ? 1 / currentValue : currentValue;
         }
 
+        /// <summary>
+        /// Returns a specified number raised to the specified power
+        /// </summary>
+        /// <param name="number">A double-precision floating-point number to be raised to a power</param>
+        /// <param name="pow">A double-precision floating-point number that specifies a power</param>
+        /// <returns>The number raised to the power</returns>
         private static double Pow(double number, int pow)
         {
             double result = 1;
