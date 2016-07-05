@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TestCases>
+  <TestCase>
+    <Number>0</Number>
+    <Pow>2</Pow>
+    <Result>0</Result>
+  </TestCase>
+  <TestCase>
+    <Number>0,5</Number>
+    <Pow>2</Pow>
+    <Result>0,7071</Result>
+  </TestCase>
+  <TestCase>
+    <Number>9</Number>
+    <Pow>-2</Pow>
+    <Result>0,3333</Result>
+  </TestCase>
+  <TestCase>
+    <Number>-27</Number>
+    <Pow>3</Pow>
+    <Result>-3</Result>  
+  </TestCase>
+</TestCases>
